@@ -130,16 +130,28 @@
         },
       ];
 
-      document.addEventListener("DOMContentLoaded", function () {
+     document.addEventListener("DOMContentLoaded", function () {
         const menuContainer = document.getElementById("subject-menu");
-        
+
         chaptersData.forEach((topic, index) => {
           const buttonLink = document.createElement("a");
           buttonLink.className = "topic-button";
-          buttonLink.textContent = (index + 1) + ". " + topic.title;
+          buttonLink.textContent = index + 1 + ". " + topic.title;
           buttonLink.href = topic.url;
           menuContainer.appendChild(buttonLink);
         });
+
+        // Add the new elements
+        const registrationText = document.createElement("p");
+        registrationText.className = "registration-text";
+        registrationText.textContent = "ফুল এক্সেস পেতে রেজিস্ট্রেশন করো!";
+        menuContainer.appendChild(registrationText);
+
+        const registrationButton = document.createElement("a");
+        registrationButton.className = "registration-button";
+        registrationButton.textContent = "রেজিষ্ট্রেশন করো";
+        registrationButton.href = "#"; // You can set a real URL here
+        menuContainer.appendChild(registrationButton);
       });
     </script>
   </body>
